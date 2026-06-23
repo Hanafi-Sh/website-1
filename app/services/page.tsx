@@ -36,18 +36,21 @@ export default function ServicesPage() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <article key={s.n} className={`card-soft p-7 anim-fade-up anim-delay-${(i + 1) * 100}`}>
-              <div className="flex items-start justify-between mb-4">
-                <div className="h-16 w-16 rounded-lg overflow-hidden glass-soft anim-bounce-soft relative" style={{ animationDelay: `${i * 0.3}s` }}>
-                  <Image src={`/assets/${s.image}`} alt={s.name} fill className="object-cover" />
+            <article key={s.n} className={`card-soft group p-0 overflow-hidden anim-fade-up anim-delay-${(i + 1) * 100}`}>
+              <div className="relative aspect-[16/10] overflow-hidden bg-pink-100">
+                <Image src={`/assets/${s.image}`} alt={s.name} fill className="object-cover hover-zoom-image" />
+                <div className="absolute top-3 right-3 text-xs font-bold text-pink-700 bg-white/80 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                  {s.n}
                 </div>
-                <span className="text-xs font-bold text-pink-400 tracking-wider">{s.n}</span>
+                <div className="hover-zoom-caption">{s.name}</div>
               </div>
-              <h2 className="font-display text-2xl font-bold text-ink">{s.name}</h2>
-              <p className="mt-2 text-sm text-text-muted leading-relaxed">{s.desc}</p>
-              <div className="mt-5 flex items-center justify-between pt-4 border-t border-pink-200/40">
-                <span className="text-xs text-text-muted">⏱ {s.duration}</span>
-                <span className="text-sm font-bold text-pink-600">{BUSINESS.priceFrom}<span className="text-pink-400">*</span></span>
+              <div className="p-7">
+                <h2 className="font-display text-2xl font-bold text-ink">{s.name}</h2>
+                <p className="mt-2 text-sm text-text-muted leading-relaxed">{s.desc}</p>
+                <div className="mt-5 flex items-center justify-between pt-4 border-t border-pink-200/40">
+                  <span className="text-xs text-text-muted">{s.duration}</span>
+                  <span className="text-sm font-bold text-pink-600">{BUSINESS.priceFrom}<span className="text-pink-400">*</span></span>
+                </div>
               </div>
             </article>
           ))}

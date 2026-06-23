@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BUSINESS, waLink } from "@/lib/constants";
 import type { Metadata } from "next";
+import MarqueeTicker from "@/components/MarqueeTicker";
 
 export const metadata: Metadata = {
   title: `${BUSINESS.copy.heroHeadline} | ${BUSINESS.name}`,
@@ -85,7 +86,7 @@ export default function HomePage() {
             <div className="relative anim-fade-scale anim-delay-200">
               {/* Main image */}
               <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-large">
-                <Image src="/assets/hero.jpg" alt="Suasana hangat Daisy Beauty Salon" fill priority className="object-cover" />
+                <Image src="/assets/hero.jpg" alt="Suasana hangat Daisy Beauty Salon" fill priority className="object-cover anim-ken-burns" />
                 <div className="absolute inset-0 bg-gradient-to-t from-pink-900/20 via-transparent to-transparent" />
               </div>
 
@@ -119,6 +120,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── MARQUEE TRUST TICKER ───────────────────────── */}
+      <MarqueeTicker />
+
       {/* ─── SERVICES ────────────────────────────────────── */}
       <section className="relative py-24 overflow-hidden">
         <div className="container-px mx-auto max-w-7xl relative z-10">
@@ -141,8 +145,8 @@ export default function HomePage() {
                 className={`card-soft p-7 anim-fade-up anim-delay-${(i + 1) * 100}`}
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="h-14 w-14 rounded-lg overflow-hidden glass-soft relative anim-bounce-soft" style={{ animationDelay: `${i * 0.3}s` }}>
-                    <Image src={`/assets/${s.image}`} alt={s.name} fill className="object-cover" />
+                  <div className="group h-14 w-14 rounded-lg overflow-hidden glass-soft relative anim-bounce-soft" style={{ animationDelay: `${i * 0.3}s` }}>
+                    <Image src={`/assets/${s.image}`} alt={s.name} fill className="object-cover hover-zoom-image" />
                   </div>
                   <span className="text-xs font-bold text-pink-400 tracking-wider">{s.n}</span>
                 </div>

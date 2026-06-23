@@ -83,6 +83,14 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0) scale(1)" },
           "50%": { transform: "translateY(-6px) scale(1.02)" },
         },
+        "ken-burns": {
+          "0%": { transform: "scale(1) translate(0, 0)" },
+          "100%": { transform: "scale(1.08) translate(-1%, 1%)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.8s ease-out forwards",
@@ -94,6 +102,8 @@ const config: Config = {
         shimmer: "shimmer 2.5s linear infinite",
         blob: "blob 12s ease-in-out infinite",
         "bounce-soft": "bounce-soft 3s ease-in-out infinite",
+        "ken-burns": "ken-burns 18s ease-in-out infinite alternate",
+        marquee: "marquee 35s linear infinite",
       },
       backdropBlur: {
         xs: "2px",

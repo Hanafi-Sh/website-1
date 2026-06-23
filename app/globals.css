@@ -113,6 +113,36 @@
   .anim-delay-700 { animation-delay: 700ms; }
   .anim-delay-800 { animation-delay: 800ms; }
 
+  /* === IMAGE HOVER MICRO-INTERACTIONS === */
+  .hover-zoom-trigger {
+    @apply relative overflow-hidden;
+  }
+  .hover-zoom-image {
+    transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .hover-zoom-trigger:hover .hover-zoom-image,
+  .group:hover .hover-zoom-image {
+    transform: scale(1.08);
+  }
+  .hover-zoom-caption {
+    @apply absolute inset-x-0 bottom-0 p-4 text-white text-sm font-semibold
+           opacity-0 translate-y-2 transition-all duration-500 ease-out
+           bg-gradient-to-t from-black/60 via-black/30 to-transparent;
+  }
+  .hover-zoom-trigger:hover .hover-zoom-caption,
+  .group:hover .hover-zoom-caption {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* === MARQUEE === */
+  .marquee-track {
+    @apply flex w-max gap-12;
+    animation: marquee 35s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
   /* === TEXT === */
   .text-gradient-pink {
     @apply bg-clip-text text-transparent;

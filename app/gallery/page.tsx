@@ -38,16 +38,16 @@ export default function GalleryPage() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => (
-            <article key={item.id} className={`card-soft p-0 overflow-hidden anim-fade-up anim-delay-${(i + 1) * 80}`}>
-              <div className="aspect-square bg-pink-gradient relative overflow-hidden">
-                <Image src={`/assets/gallery-${item.id}.png`} alt={item.caption} fill className="object-cover" />
-                <div className="absolute inset-0 bg-pink-900/0 group-hover:bg-pink-900/10 transition-colors" />
+            <article key={item.id} className={`card-soft group p-0 overflow-hidden anim-fade-up anim-delay-${(i + 1) * 80}`}>
+              <div className="relative aspect-square overflow-hidden bg-pink-100">
+                <Image src={`/assets/gallery-${item.id}.png`} alt={item.caption} fill className="object-cover hover-zoom-image" />
+                <div className="absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded-full bg-white/85 backdrop-blur-sm text-pink-700">
+                  {item.service}
+                </div>
+                <div className="hover-zoom-caption">{item.caption}</div>
               </div>
               <div className="p-4">
-                <span className="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-pink-100 text-pink-700">
-                  {item.service}
-                </span>
-                <p className="mt-2 text-sm font-medium text-ink">{item.caption}</p>
+                <p className="text-sm font-medium text-ink">{item.caption}</p>
               </div>
             </article>
           ))}
