@@ -7,85 +7,136 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-paper text-ink;
+    @apply bg-pink-50 text-ink antialiased;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(255, 179, 198, 0.25) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(255, 228, 236, 0.30) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(255, 207, 217, 0.20) 0px, transparent 50%);
+    background-attachment: fixed;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display text-ink;
   }
   ::selection {
-    @apply bg-rose-primary/15 text-ink;
+    @apply bg-pink-300/40 text-ink;
   }
 }
 
 @layer components {
-  .container-px {
-    @apply px-5 sm:px-8 lg:px-12;
+  /* === GLASSMORPHISM === */
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(255, 107, 157, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
-  .section {
-    @apply py-16 sm:py-24 lg:py-32;
+  .glass-soft {
+    background: rgba(255, 255, 255, 0.40);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
   }
-
-  /* ─── EDITORIAL ELEMENTS ───────────────────────────────── */
-
-  /* Eyebrow: small mono caps with tracked spacing */
-  .eyebrow {
-    @apply font-mono text-[10px] uppercase tracking-eyebrow text-ink/60;
+  .glass-pink {
+    background: rgba(255, 228, 236, 0.55);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 179, 198, 0.45);
   }
-
-  /* Eyebrow with rose accent color */
-  .eyebrow-rose {
-    @apply font-mono text-[10px] uppercase tracking-eyebrow text-rose-primary;
-  }
-
-  /* Dateline: editorial header with issue/location */
-  .dateline {
-    @apply font-mono text-[11px] uppercase tracking-eyebrow text-ink/70;
-  }
-
-  /* Hairline rule */
-  .rule {
-    @apply h-px w-full bg-rule;
+  .glass-dark {
+    background: rgba(42, 31, 42, 0.30);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
 
-  /* Drop cap for opening paragraph */
-  .drop-cap::first-letter {
-    @apply font-display float-left mr-2 text-6xl leading-[0.85] text-rose-primary;
-    font-feature-settings: "ss01";
+  /* === GRADIENTS === */
+  .bg-pink-gradient {
+    background: linear-gradient(135deg, #FFB3C6 0%, #FFE4EC 50%, #FFCDD9 100%);
+  }
+  .bg-pink-gradient-soft {
+    background: linear-gradient(180deg, #FFF0F5 0%, #FFFAFB 100%);
+  }
+  .bg-pink-gradient-radial {
+    background: radial-gradient(circle at top right, #FFCDD9 0%, #FFE4EC 40%, #FFF0F5 80%);
   }
 
-  /* Numbered marker for editorial lists */
-  .num {
-    @apply font-mono text-sm tabular-nums text-ink/40;
-  }
-
-  /* Buttons — keep restrained, no boxy shadows */
+  /* === BUTTONS === */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-all duration-300 ease-out-expo hover:bg-rose-primary active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-pink-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition-all duration-300 ease-spring hover:bg-pink-600 hover:shadow-medium hover:scale-[1.02] active:scale-[0.98];
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 border-b border-ink bg-transparent px-1 py-1 text-sm font-medium text-ink transition-colors duration-300 hover:text-rose-primary;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-pink-400 bg-white/40 backdrop-blur-md px-7 py-3.5 text-sm font-semibold text-pink-600 transition-all duration-300 ease-spring hover:bg-white/70 hover:scale-[1.02] active:scale-[0.98];
   }
   .btn-whatsapp {
-    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-[#25D366] px-6 py-3 text-sm font-medium text-paper transition-all duration-300 ease-out-expo hover:bg-[#1da851] active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition-all duration-300 ease-spring hover:bg-[#1da851] hover:shadow-medium hover:scale-[1.02] active:scale-[0.98];
   }
 
-  /* Pull quote — large editorial quote */
-  .pull-quote {
-    @apply font-editorial text-2xl italic leading-snug text-ink sm:text-3xl;
+  /* === CARDS === */
+  .card-soft {
+    @apply rounded-lg glass p-6 transition-all duration-500 ease-spring hover:shadow-glass-lg hover:-translate-y-1;
+  }
+  .card-pink {
+    @apply rounded-lg glass-pink p-6 transition-all duration-500 ease-spring hover:shadow-glass-lg hover:-translate-y-1;
   }
 
-  /* Editorial card — no shadow, hairline border, asymmetric */
-  .ed-card {
-    @apply border-t border-rule py-8 transition-colors duration-300 ease-out-expo hover:bg-paper-warm/40;
+  /* === ANIMATIONS (entrance + ambient) === */
+  .anim-fade-up {
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .anim-fade-in {
+    animation: fade-in 0.8s ease-out both;
+  }
+  .anim-fade-scale {
+    animation: fade-scale 0.8s ease-out both;
+  }
+  .anim-slide-right {
+    animation: slide-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .anim-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .anim-bounce-soft {
+    animation: bounce-soft 3s ease-in-out infinite;
+  }
+  .anim-blob {
+    animation: blob 12s ease-in-out infinite;
   }
 
-  /* List row — for numbered services */
-  .list-row {
-    @apply grid grid-cols-[3rem_1fr_auto] items-baseline gap-4 border-b border-rule py-6 transition-colors duration-300 ease-out-expo hover:bg-paper-warm/40;
+  /* Stagger delays */
+  .anim-delay-100 { animation-delay: 100ms; }
+  .anim-delay-200 { animation-delay: 200ms; }
+  .anim-delay-300 { animation-delay: 300ms; }
+  .anim-delay-400 { animation-delay: 400ms; }
+  .anim-delay-500 { animation-delay: 500ms; }
+  .anim-delay-600 { animation-delay: 600ms; }
+  .anim-delay-700 { animation-delay: 700ms; }
+  .anim-delay-800 { animation-delay: 800ms; }
+
+  /* === TEXT === */
+  .text-gradient-pink {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #FF6B9D 0%, #C93570 100%);
+  }
+  .text-gradient-pink-soft {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #FF8FB1 0%, #FF6B9D 100%);
   }
 
-  /* Star rating */
-  .stars {
-    @apply text-gold;
+  /* === DECORATIVE === */
+  .blob-1 {
+    @apply absolute rounded-full bg-pink-200/40 blur-3xl;
+  }
+  .blob-2 {
+    @apply absolute rounded-full bg-pink-300/30 blur-3xl;
+  }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

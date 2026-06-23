@@ -8,48 +8,56 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { n: "01", name: "Potong Rambut Wanita", desc: "Potongan klasik hingga trendi (butterfly cut, layer, bob, dll). Konsultasi gaya gratis sebelum potong.", duration: "45–90 menit" },
-  { n: "02", name: "Hair Coloring / Pewarnaan", desc: "Full color, highlights, balayage, ombre. Konsultasi warna sebelum treatment untuk hasil optimal.", duration: "2–3 jam" },
-  { n: "03", name: "Hair Treatment", desc: "Creambath, hair mask, smoothing, dan treatment khusus untuk rambut rusak / over-processed.", duration: "60–90 menit" },
-  { n: "04", name: "Styling Rambut", desc: "Blow, curling, updo untuk acara spesial. Cocok untuk wisuda, pernikahan, photoshoot.", duration: "30–60 menit" },
-  { n: "05", name: "Konsultasi Gaya", desc: "Konsultasi gratis untuk menentukan gaya yang cocok dengan bentuk wajah & gaya hidup kamu.", duration: "15 menit" },
-  { n: "06", name: "Cuci & Blow", desc: "Cuci rambut dengan shampoo premium + blow styling. Selesai dengan rambut harum dan rapi.", duration: "30–45 menit" },
+  { n: "01", name: "Potong Rambut", emoji: "✂️", desc: "Potongan klasik hingga trendi (butterfly cut, layer, bob, dll). Konsultasi gaya gratis sebelum potong.", duration: "45–90 min" },
+  { n: "02", name: "Hair Coloring", emoji: "🎨", desc: "Full color, highlights, balayage, ombre. Konsultasi warna sebelum treatment untuk hasil optimal.", duration: "2–3 jam" },
+  { n: "03", name: "Hair Treatment", emoji: "💆", desc: "Creambath, hair mask, smoothing, dan treatment khusus untuk rambut rusak / over-processed.", duration: "60–90 min" },
+  { n: "04", name: "Styling Rambut", emoji: "💁", desc: "Blow, curling, updo untuk acara spesial. Cocok untuk wisuda, pernikahan, photoshoot.", duration: "30–60 min" },
+  { n: "05", name: "Konsultasi Gaya", emoji: "💬", desc: "Konsultasi gratis untuk menentukan gaya yang cocok dengan bentuk wajah & gaya hidup kamu.", duration: "15 min" },
+  { n: "06", name: "Cuci & Blow", emoji: "🧴", desc: "Cuci rambut dengan shampoo premium + blow styling. Selesai dengan rambut harum dan rapi.", duration: "30–45 min" },
 ];
 
 export default function ServicesPage() {
   return (
-    <section className="section">
-      <div className="container-px mx-auto max-w-7xl">
-        <p className="eyebrow-rose">Layanan & Harga</p>
-        <h1 className="mt-3 max-w-3xl font-display text-4xl font-light leading-tight text-ink sm:text-5xl lg:text-6xl">
-          Enam hal yang kami lakukan dengan baik.
-        </h1>
-        <p className="mt-4 max-w-2xl font-editorial text-lg italic text-ink/70">
-          Daftar singkat, bukan menu panjang. Semua dengan harga transparan — disampaikan di awal, tidak ada kejutan. Mulai dari {BUSINESS.priceFrom}.
-        </p>
+    <section className="relative py-32 overflow-hidden">
+      <div className="blob-1 w-96 h-96 -top-20 -left-20 anim-blob" />
+      <div className="container-px mx-auto max-w-6xl relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16 anim-fade-up">
+          <span className="inline-block glass-pink px-4 py-1.5 rounded-full text-xs font-semibold text-pink-700 uppercase tracking-wider">
+            Layanan & Harga
+          </span>
+          <h1 className="mt-5 font-display text-5xl sm:text-6xl font-extrabold leading-[1.05]">
+            Enam hal yang kami lakukan dengan <span className="text-gradient-pink">baik</span>.
+          </h1>
+          <p className="mt-5 text-lg text-text-muted">
+            Daftar singkat, bukan menu panjang. Semua dengan harga transparan — disampaikan di awal, tidak ada kejutan. Mulai dari <strong className="text-pink-600">{BUSINESS.priceFrom}</strong>.
+          </p>
+        </div>
 
-        <ol className="mt-16 border-t border-rule">
-          {services.map((s) => (
-            <li key={s.n} className="list-row">
-              <span className="num">{s.n}</span>
-              <div>
-                <h2 className="font-display text-2xl text-ink sm:text-3xl">{s.name}</h2>
-                <p className="mt-2 max-w-2xl text-ink/70">{s.desc}</p>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((s, i) => (
+            <article key={s.n} className={`card-soft p-7 anim-fade-up anim-delay-${(i + 1) * 100}`}>
+              <div className="flex items-start justify-between mb-4">
+                <div className="text-5xl anim-bounce-soft" style={{ animationDelay: `${i * 0.3}s` }}>
+                  {s.emoji}
+                </div>
+                <span className="text-xs font-bold text-pink-400 tracking-wider">{s.n}</span>
               </div>
-              <div className="text-right">
-                <p className="font-mono text-xs uppercase tracking-eyebrow text-ink/60">⏱ {s.duration}</p>
-                <p className="mt-1 text-sm text-ink">{BUSINESS.priceFrom}<span className="text-ink/40">*</span></p>
+              <h2 className="font-display text-2xl font-bold text-ink">{s.name}</h2>
+              <p className="mt-2 text-sm text-text-muted leading-relaxed">{s.desc}</p>
+              <div className="mt-5 flex items-center justify-between pt-4 border-t border-pink-200/40">
+                <span className="text-xs text-text-muted">⏱ {s.duration}</span>
+                <span className="text-sm font-bold text-pink-600">{BUSINESS.priceFrom}<span className="text-pink-400">*</span></span>
               </div>
-            </li>
+            </article>
           ))}
-        </ol>
+        </div>
 
-        <p className="mt-8 max-w-2xl font-editorial text-sm italic text-ink/60">
+        <p className="mt-10 text-sm italic text-text-muted text-center anim-fade-up">
           *Harga bervariasi tergantung kompleksitas. Hubungi kami untuk konsultasi & quotation spesifik.
         </p>
 
-        <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <a href={waLink(`Halo, saya mau tanya detail layanan di ${BUSINESS.name}.`)} target="_blank" rel="noreferrer" className="btn-whatsapp">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 anim-fade-up">
+          <a href={waLink(`Halo, saya mau tanya detail layanan di ${BUSINESS.name}.`)} target="_blank" rel="noreferrer" className="btn-primary">
             💬 Tanya via WhatsApp
           </a>
           <Link href="/booking" className="btn-secondary">Detail booking →</Link>

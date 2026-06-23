@@ -8,57 +8,61 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
-      <section className="section">
-        <div className="container-px mx-auto max-w-3xl">
-          <p className="eyebrow-rose">Tentang</p>
-          <h1 className="mt-3 font-display text-4xl font-light leading-tight text-ink sm:text-5xl">
-            {BUSINESS.copy.aboutHeadline}.
+    <section className="relative py-32 overflow-hidden">
+      <div className="blob-1 w-96 h-96 -top-20 -left-20 anim-blob" />
+      <div className="blob-2 w-80 h-80 top-1/2 -right-20 anim-blob" />
+      <div className="container-px mx-auto max-w-3xl relative z-10">
+        <div className="text-center mb-12 anim-fade-up">
+          <span className="inline-block glass-pink px-4 py-1.5 rounded-full text-xs font-semibold text-pink-700 uppercase tracking-wider">
+            Tentang
+          </span>
+          <h1 className="mt-5 font-display text-4xl sm:text-5xl font-extrabold leading-[1.05]">
+            {BUSINESS.copy.aboutHeadline.split(" by ")[0]} <span className="text-gradient-pink">by</span> Debby.
           </h1>
+        </div>
 
-          <div className="prose prose-lg mt-12 max-w-none text-ink">
-            <p className="drop-cap font-editorial text-lg leading-relaxed text-ink/85">
-              {BUSINESS.copy.aboutP1}
-            </p>
-            <p className="mt-6 font-editorial text-lg leading-relaxed text-ink/85">
-              {BUSINESS.copy.aboutP2}
-            </p>
+        <div className="card-soft p-8 sm:p-12 anim-fade-up anim-delay-100">
+          <div className="text-5xl mb-4 anim-bounce-soft">💕</div>
+          <p className="text-lg text-ink leading-relaxed">
+            Halo, kami {BUSINESS.name} — salon rambut milik perempuan yang terletak di {BUSINESS.address.street.split(",")[0]}, Sleman. Berawal dari passion Mba Debby akan dunia styling rambut, kami hadir untuk memberikan pengalaman salon yang hangat, ramah, dan bikin kamu betah.
+          </p>
+          <p className="mt-4 text-lg text-ink leading-relaxed">
+            Pelanggan kami sering bilang suasana di sini <em>super comfy</em>, lengkap dengan free drinks, snacks, dan musik Spotify yang bikin rileks. Kami percaya, rambut bagus itu bonus — rasa dihargai itu yang utama. Itulah kenapa harga selalu kami sampaikan di awal, supaya kamu nggak kaget saat bayar.
+          </p>
+          <p className="mt-4 text-lg text-ink leading-relaxed">
+            Dengan rating <strong className="text-pink-600">{BUSINESS.rating}</strong> dari {BUSINESS.reviewCount.toLocaleString("id-ID")} ulasan, kami bangga jadi salah satu salon paling direkomendasikan di Jogja. Mau ditemani Mba Debby langsung, atau Kak Agnes yang jago coloring? Booking dulu yuk.
+          </p>
+        </div>
+
+        <div className="mt-8 glass-pink rounded-xl p-8 anim-fade-up anim-delay-200">
+          <p className="text-xs font-bold uppercase tracking-wider text-pink-600 mb-2">Founder Story Prompt</p>
+          <p className="italic text-text-muted">
+            &ldquo;{BUSINESS.copy.founderPrompt}&rdquo;
+          </p>
+          <p className="mt-3 text-xs text-text-muted">— untuk Mba Debby, founder</p>
+        </div>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <div className="card-soft p-6 anim-fade-up">
+            <div className="text-3xl mb-2">📍</div>
+            <h3 className="font-display text-lg font-bold text-ink">Lokasi</h3>
+            <p className="mt-2 text-sm text-ink">{BUSINESS.address.street}</p>
+            <p className="mt-1 text-sm text-text-muted">{BUSINESS.address.city}, {BUSINESS.address.state}</p>
+            <p className="mt-3 text-xs text-text-muted">Caturtunggal/Seturan, dekat kampus UII, UGM, UNY.</p>
           </div>
-
-          <div className="mt-12 border-t border-rule pt-8">
-            <p className="eyebrow">Founder Story Prompt</p>
-            <p className="mt-3 max-w-2xl font-editorial italic text-ink/70">
-              {BUSINESS.copy.founderPrompt}
-            </p>
-            <p className="mt-3 font-mono text-xs uppercase tracking-eyebrow text-ink/50">— untuk Mba Debby, founder</p>
+          <div className="card-soft p-6 anim-fade-up anim-delay-100">
+            <div className="text-3xl mb-2">💎</div>
+            <h3 className="font-display text-lg font-bold text-ink">Identitas</h3>
+            <p className="mt-2 text-sm"><strong className="text-pink-600">Women-owned</strong> — diidentifikasi resmi di Google</p>
+            <p className="mt-1 text-xs text-text-muted">Credit Card · Debit · NFC · QRIS · Cheques</p>
+            <p className="mt-1 text-xs text-text-muted">Beverages & toilet tersedia</p>
           </div>
         </div>
-      </section>
 
-      <section className="section bg-paper-warm">
-        <div className="container-px mx-auto max-w-3xl">
-          <div className="grid gap-px bg-rule sm:grid-cols-2">
-            <div className="bg-paper-warm p-8">
-              <p className="eyebrow">Lokasi</p>
-              <p className="mt-3 text-sm text-ink">{BUSINESS.address.street}</p>
-              <p className="mt-1 text-sm text-ink/70">{BUSINESS.address.city}, {BUSINESS.address.state}</p>
-              <p className="mt-3 text-sm text-ink/80">Area: Caturtunggal/Seturan, dekat kampus UII, UGM, UNY. Dominan mahasiswa & komunitas urban.</p>
-            </div>
-            <div className="bg-paper-warm p-8">
-              <p className="eyebrow">Identitas</p>
-              <p className="mt-3 text-sm text-ink"><strong>Women-owned</strong> — diidentifikasi resmi di Google</p>
-              <p className="mt-2 text-sm text-ink/70">Menerima Credit Card, Debit Card, NFC, QRIS, Cheques. Appointment recommended.</p>
-              <p className="mt-2 text-sm text-ink/70">Beverages & toilet tersedia untuk kenyamanan pelanggan.</p>
-            </div>
-          </div>
+        <div className="mt-10 text-center anim-fade-up">
+          <a href={waLink()} target="_blank" rel="noreferrer" className="btn-primary">💬 Booking via WhatsApp</a>
         </div>
-      </section>
-
-      <section className="section">
-        <div className="container-px mx-auto max-w-3xl text-center">
-          <a href={waLink()} target="_blank" rel="noreferrer" className="btn-whatsapp">💬 Booking via WhatsApp</a>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

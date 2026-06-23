@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Newsreader, Inter, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { BUSINESS } from "@/lib/constants";
 import Navigation from "@/components/Navigation";
@@ -7,10 +7,8 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import SchemaOrg from "@/components/SchemaOrg";
 
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-display", display: "swap", axes: ["opsz", "SOFT"] });
-const newsreader = Newsreader({ subsets: ["latin"], variable: "--font-editorial", display: "swap", style: ["normal", "italic"] });
+const display = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-display", display: "swap", weight: ["400", "500", "600", "700", "800"] });
 const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://daisybeautysalonbydebby.com"),
@@ -26,7 +24,7 @@ export const metadata: Metadata = {
     title: `${BUSINESS.name} | Salon Jogja Seturan`,
     description: BUSINESS.description,
     siteName: BUSINESS.name,
-    images: [{ url: "/hero.jpg", width: 1320, height: 738, alt: "Daisy Beauty Salon interior dengan stylist dan client" }],
+    images: [{ url: "/hero.jpg", width: 1320, height: 738, alt: "Suasana hangat Daisy Beauty Salon" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -40,19 +38,19 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#FAF6F0",
+  themeColor: "#FF6B9D",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={`${fraunces.variable} ${newsreader.variable} ${inter.variable} ${mono.variable}`}>
+    <html lang="id" className={`${display.variable} ${inter.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased overflow-x-hidden">
         <SchemaOrg />
         <Navigation />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen relative">{children}</main>
         <Footer />
         <WhatsAppFloat />
       </body>
