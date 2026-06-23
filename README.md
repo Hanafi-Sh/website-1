@@ -64,6 +64,13 @@ npm run typecheck   # tsc --noEmit
 npm run lint        # next lint
 ```
 
+## Deployment
+
+This project auto-deploys to Vercel on every push to `main`. Production URL is set per Vercel project.
+
+If you see 401 Unauthorized on the Vercel URL, go to:
+**Project → Settings → Deployment Protection** → set to "Disabled" or "Only for Preview Deployments".
+
 ## Source Attribution
 
 | Asset | Source |
