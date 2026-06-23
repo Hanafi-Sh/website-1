@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hanafi-sh.github.io/website-1/sitemap.xml
