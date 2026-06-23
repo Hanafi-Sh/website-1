@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BUSINESS, waLink } from "@/lib/constants";
 import type { Metadata } from "next";
 
@@ -22,7 +23,9 @@ export default function AboutPage() {
         </div>
 
         <div className="card-soft p-8 sm:p-12 anim-fade-up anim-delay-100">
-          <div className="text-5xl mb-4 anim-bounce-soft">💕</div>
+          <div className="relative h-20 w-20 rounded-full overflow-hidden mb-5 ring-2 ring-pink-200/60">
+            <Image src="/assets/stylist-debby.png" alt="Mba Debby, founder" fill className="object-cover" />
+          </div>
           <p className="text-lg text-ink leading-relaxed">
             Halo, kami {BUSINESS.name} — salon rambut milik perempuan yang terletak di {BUSINESS.address.street.split(",")[0]}, Sleman. Berawal dari passion Mba Debby akan dunia styling rambut, kami hadir untuk memberikan pengalaman salon yang hangat, ramah, dan bikin kamu betah.
           </p>
@@ -44,14 +47,12 @@ export default function AboutPage() {
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           <div className="card-soft p-6 anim-fade-up">
-            <div className="text-3xl mb-2">📍</div>
             <h3 className="font-display text-lg font-bold text-ink">Lokasi</h3>
             <p className="mt-2 text-sm text-ink">{BUSINESS.address.street}</p>
             <p className="mt-1 text-sm text-text-muted">{BUSINESS.address.city}, {BUSINESS.address.state}</p>
             <p className="mt-3 text-xs text-text-muted">Caturtunggal/Seturan, dekat kampus UII, UGM, UNY.</p>
           </div>
           <div className="card-soft p-6 anim-fade-up anim-delay-100">
-            <div className="text-3xl mb-2">💎</div>
             <h3 className="font-display text-lg font-bold text-ink">Identitas</h3>
             <p className="mt-2 text-sm"><strong className="text-pink-600">Women-owned</strong> — diidentifikasi resmi di Google</p>
             <p className="mt-1 text-xs text-text-muted">Credit Card · Debit · NFC · QRIS · Cheques</p>
@@ -60,7 +61,7 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-10 text-center anim-fade-up">
-          <a href={waLink()} target="_blank" rel="noreferrer" className="btn-primary">💬 Booking via WhatsApp</a>
+          <a href={waLink()} target="_blank" rel="noreferrer" className="btn-primary">Booking via WhatsApp</a>
         </div>
       </div>
     </section>

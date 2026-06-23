@@ -49,17 +49,17 @@ export default function BookingPage() {
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 anim-fade-up">
           <a href={waLink(`Halo ${BUSINESS.name}, saya mau booking layanan. Mohon info slot yang tersedia untuk tanggal...`)} target="_blank" rel="noreferrer" className="btn-primary">
-            💬 Booking via WhatsApp
+            Booking via WhatsApp
           </a>
           <a href={`tel:${BUSINESS.phone}`} className="btn-secondary">
-            📞 Telepon {BUSINESS.whatsappDisplay}
+            Telepon {BUSINESS.whatsappDisplay}
           </a>
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           <div className="card-soft p-7 anim-fade-up">
-            <h3 className="font-display text-lg font-bold text-pink-600 flex items-center gap-2">
-              <span className="text-2xl">📍</span> Alamat
+            <h3 className="font-display text-lg font-bold text-pink-600">
+              Alamat
             </h3>
             <p className="mt-3 text-sm text-ink">{BUSINESS.address.street}</p>
             <p className="mt-1 text-sm text-text-muted">{BUSINESS.address.city}, {BUSINESS.address.state}</p>
@@ -73,8 +73,8 @@ export default function BookingPage() {
             </a>
           </div>
           <div className="card-soft p-7 anim-fade-up anim-delay-100">
-            <h3 className="font-display text-lg font-bold text-pink-600 flex items-center gap-2">
-              <span className="text-2xl">🕐</span> Jam Operasional
+            <h3 className="font-display text-lg font-bold text-pink-600">
+              Jam Operasional
             </h3>
             <ul className="mt-3 space-y-1.5 text-sm">
               {BUSINESS.hours.map((h) => (
@@ -84,7 +84,7 @@ export default function BookingPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-xs italic text-pink-400">💡 Puncak keramaian ~17:00 — pagi/akhir lebih santai.</p>
+            <p className="mt-3 text-xs italic text-pink-400">Puncak keramaian ~17:00 — pagi/akhir lebih santai.</p>
           </div>
         </div>
       </div>

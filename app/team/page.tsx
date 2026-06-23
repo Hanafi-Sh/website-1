@@ -55,7 +55,7 @@ export default function TeamPage() {
 
         <div className="mt-16 text-center anim-fade-up">
           <a href={waLink(`Halo, saya mau booking dengan stylist tertentu di ${BUSINESS.name}.`)} target="_blank" rel="noreferrer" className="btn-primary">
-            💬 Booking Stylist Favorit
+            Booking Stylist Favorit
           </a>
         </div>
       </div>

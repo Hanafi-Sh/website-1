@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 };
 
 const items = [
-  { id: 1, service: "Potong Rambut", emoji: "✂️", caption: "Butterfly cut yang gorgeous" },
-  { id: 2, service: "Hair Coloring", emoji: "🎨", caption: "Balayage coklat hangat" },
-  { id: 3, service: "Potong Rambut", emoji: "💇", caption: "Layer cut dengan poni" },
-  { id: 4, service: "Styling", emoji: "💁", caption: "Blow styling untuk acara" },
-  { id: 5, service: "Hair Treatment", emoji: "💆", caption: "Creambath smoothing" },
-  { id: 6, service: "Potong Rambut", emoji: "✂️", caption: "Bob cut klasik" },
-  { id: 7, service: "Hair Coloring", emoji: "🎨", caption: "Full color highlight" },
-  { id: 8, service: "Styling", emoji: "💁", caption: "Curly updo wisuda" },
+  { id: 1, service: "Potong Rambut", caption: "Butterfly cut yang gorgeous" },
+  { id: 2, service: "Hair Coloring", caption: "Balayage coklat hangat" },
+  { id: 3, service: "Potong Rambut", caption: "Layer cut dengan poni" },
+  { id: 4, service: "Styling", caption: "Blow styling untuk acara" },
+  { id: 5, service: "Hair Treatment", caption: "Creambath smoothing" },
+  { id: 6, service: "Potong Rambut", caption: "Bob cut klasik" },
+  { id: 7, service: "Hair Coloring", caption: "Full color highlight" },
+  { id: 8, service: "Styling", caption: "Curly updo wisuda" },
 ];
 
 export default function GalleryPage() {
@@ -33,7 +33,7 @@ export default function GalleryPage() {
           <p className="mt-5 text-lg text-text-muted">
             Lihat hasil kerja kami. Setiap potong, coloring, dan styling dibuat dengan teliti dan passion.
           </p>
-          <p className="mt-3 text-xs italic text-pink-400">📷 Preview hasil kerja kami. Foto real dengan model akan diperbarui di v1.1.</p>
+          <p className="mt-3 text-xs italic text-pink-400">Preview hasil kerja kami. Foto real dengan model akan diperbarui di v1.1.</p>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -55,7 +55,7 @@ export default function GalleryPage() {
 
         <div className="mt-16 text-center anim-fade-up">
           <a href={waLink(`Halo, saya tertarik dengan hasil kerja di ${BUSINESS.name}.`)} target="_blank" rel="noreferrer" className="btn-primary">
-            💬 Booking Sekarang
+            Booking Sekarang
           </a>
         </div>
       </div>

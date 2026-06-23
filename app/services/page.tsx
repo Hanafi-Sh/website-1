@@ -59,7 +59,7 @@ export default function ServicesPage() {
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3 anim-fade-up">
           <a href={waLink(`Halo, saya mau tanya detail layanan di ${BUSINESS.name}.`)} target="_blank" rel="noreferrer" className="btn-primary">
-            💬 Tanya via WhatsApp
+            Tanya via WhatsApp
           </a>
           <Link href="/booking" className="btn-secondary">Detail booking →</Link>
         </div>

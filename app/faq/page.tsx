@@ -55,7 +55,7 @@ export default function FaqPage() {
 
         <div className="mt-12 text-center anim-fade-up">
           <a href={waLink()} target="_blank" rel="noreferrer" className="btn-primary">
-            💬 Tanya via WhatsApp
+            Tanya via WhatsApp
           </a>
         </div>
       </div>

@@ -5,7 +5,7 @@ export const BUSINESS = {
   name: "Daisy Beauty Salon By Debby",
   shortName: "Daisy Beauty Salon",
   tagline: "Rambut Sempurna, Hati Hangat di Jogja",
-  description: "Salon rambut wanita terbaik di Seturan, Jogja. Potong rambut, coloring, & treatment dengan harga transparan. Rating 4.90★ dari 3.840 review.",
+  description: "Salon rambut wanita terbaik di Seturan, Jogja. Potong rambut, coloring, & treatment dengan harga transparan. Rating 4.90/5 dari 3.840 review.",
   phone: "0896-1237-7910",
   whatsapp: "6289612377910",
   whatsappDisplay: "0896-1237-7910",
@@ -55,7 +55,7 @@ export const BUSINESS = {
   ],
   copy: {
     heroHeadline: "Rambut Sempurna, Hati Hangat di Jogja",
-    heroSubheadline: "Daisy Beauty Salon by Debby — potongan rambut terbaik di Yogyakarta dengan keramahan yang bikin kamu betah berlama-lama. Rating 4.90★ dari 3.840 pelanggan.",
+    heroSubheadline: "Daisy Beauty Salon by Debby — potongan rambut terbaik di Yogyakarta dengan keramahan yang bikin kamu betah berlama-lama. Rating 4.90/5 dari 3.840 pelanggan.",
     heroCTA: "Booking Sekarang",
     heroCTASecondary: "Lihat Layanan",
     heroVariations: [

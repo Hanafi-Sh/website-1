@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { BUSINESS } from "@/lib/constants";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Testimoni Pelanggan",
-  description: `Apa kata pelanggan ${BUSINESS.name}. ${BUSINESS.reviewCount.toLocaleString("id-ID")} review, rating ${BUSINESS.rating}★.`,
+  description: `Apa kata pelanggan ${BUSINESS.name}. ${BUSINESS.reviewCount.toLocaleString("id-ID")} review, rating ${BUSINESS.rating}/5.`,
 };
 
 export default function TestimonialsPage() {
@@ -19,7 +20,7 @@ export default function TestimonialsPage() {
             Apa kata <span className="text-gradient-pink">mereka</span>.
           </h1>
           <p className="mt-5 text-lg text-text-muted">
-            {BUSINESS.reviewCount.toLocaleString("id-ID")} review dari Google, rating rata-rata <strong className="text-pink-600">{BUSINESS.rating}★</strong>.
+            {BUSINESS.reviewCount.toLocaleString("id-ID")} review dari Google, rating rata-rata <strong className="text-pink-600">{BUSINESS.rating}/5</strong>.
           </p>
           <p className="mt-2 text-xs italic text-text-muted">Nama dianonimkan (first name + last initial) untuk privasi.</p>
         </div>
@@ -27,7 +28,7 @@ export default function TestimonialsPage() {
         <div className="grid gap-5 sm:grid-cols-2">
           {BUSINESS.testimonials.map((t, i) => (
             <figure key={i} className={`card-soft p-7 anim-fade-up anim-delay-${(i + 1) * 100}`}>
-              <div className="text-gold mb-4 text-lg">{"★".repeat(t.rating)}</div>
+              <div className="text-gold mb-4 text-lg font-bold">5.0/5</div>
               <blockquote className="text-sm text-ink leading-relaxed">
                 &ldquo;{t.text}&rdquo;
               </blockquote>
@@ -39,9 +40,11 @@ export default function TestimonialsPage() {
         </div>
 
         <div className="mt-16 glass-pink rounded-xl p-10 text-center anim-fade-up">
-          <div className="text-5xl mb-3">⭐</div>
+          <div className="text-5xl mb-3">
+            <Image src="/assets/gallery-1.png" alt="Rating bintang 5" width={64} height={64} className="mx-auto rounded-full" />
+          </div>
           <p className="font-display text-3xl sm:text-4xl font-extrabold text-ink">
-            {BUSINESS.rating}★ dari {BUSINESS.reviewCount.toLocaleString("id-ID")} review
+            {BUSINESS.rating}/5 dari {BUSINESS.reviewCount.toLocaleString("id-ID")} review
           </p>
           <p className="mt-3 text-text-muted">96% adalah bintang 5. Kami konsisten menjaga kualitas.</p>
         </div>

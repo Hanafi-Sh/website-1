@@ -31,7 +31,7 @@ export default function Navigation() {
             ))}
           </div>
           <a href={waLink()} target="_blank" rel="noreferrer" className="btn-whatsapp text-xs px-4 py-2 shrink-0">
-            💬 Booking
+            Booking
           </a>
         </nav>
       </header>

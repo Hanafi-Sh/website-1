@@ -19,7 +19,7 @@ export default function Footer() {
                 {BUSINESS.tagline}. Salon rambut wanita di Seturan, Sleman.
               </p>
               <div className="mt-5 flex items-center gap-2">
-                <div className="flex text-gold text-lg">★★★★★</div>
+                <div className="text-xs font-bold text-gold uppercase tracking-wider">5.0/5 rating</div>
                 <span className="text-sm text-ink/80">
                   <strong>{BUSINESS.rating}</strong> · {BUSINESS.reviewCount.toLocaleString("id-ID")} review
                 </span>
@@ -30,15 +30,15 @@ export default function Footer() {
               <ul className="space-y-2 text-sm text-ink/80">
                 <li>
                   <a href={`tel:${BUSINESS.phone}`} className="hover:text-pink-600 transition-colors">
-                    📞 {BUSINESS.whatsappDisplay}
+                    {BUSINESS.whatsappDisplay}
                   </a>
                 </li>
                 <li>
                   <a href={waLink()} target="_blank" rel="noreferrer" className="hover:text-pink-600 transition-colors">
-                    💬 WhatsApp
+                    WhatsApp
                   </a>
                 </li>
-                <li className="text-text-muted">📍 {BUSINESS.address.street.split(",")[0]}</li>
+                <li className="text-text-muted">{BUSINESS.address.street.split(",")[0]}</li>
               </ul>
             </div>
             <div>
@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
           <div className="mt-12 pt-6 border-t border-pink-200/50 flex items-center justify-between gap-4 text-xs text-text-muted">
             <p>© {new Date().getFullYear()} {BUSINESS.name}. Hak cipta dilindungi.</p>
-            <p className="font-display">Made with 💕 in Yogyakarta</p>
+            <p className="font-display">Made with love in Yogyakarta</p>
           </div>
         </div>
       </div>
