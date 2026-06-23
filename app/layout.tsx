@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     title: `${BUSINESS.name} | Salon Jogja Seturan`,
     description: BUSINESS.description,
     siteName: BUSINESS.name,
-    images: [{ url: "/hero.jpg", width: 1320, height: 738, alt: "Suasana hangat Daisy Beauty Salon" }],
+    images: [{ url: "/assets/hero.jpg", width: 1320, height: 738, alt: "Suasana hangat Daisy Beauty Salon" }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${BUSINESS.name} | Salon Jogja Seturan`,
     description: BUSINESS.description,
-    images: ["/hero.jpg"],
+    images: ["/assets/hero.jpg"],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
 };

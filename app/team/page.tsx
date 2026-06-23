@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BUSINESS, waLink } from "@/lib/constants";
 import type { Metadata } from "next";
 
@@ -7,10 +8,10 @@ export const metadata: Metadata = {
 };
 
 const stylists = [
-  { name: "Mba Debby", role: "Owner & Top Stylist", avatar: "👑", specialties: ["Signature cuts", "Butterfly", "Hair coloring"], accent: true },
-  { name: "Kak Agnes", role: "Senior Stylist", avatar: "💁", specialties: ["Hair coloring", "Highlights", "Ombre"], accent: false },
-  { name: "Mba Sari", role: "Stylist", avatar: "💇", specialties: ["Potong", "Styling", "Blow"], accent: false },
-  { name: "Mba Lina", role: "Junior Stylist", avatar: "✂️", specialties: ["Basic styling", "Cuci & blow", "Treatment"], accent: false },
+  { name: "Mba Debby", role: "Owner & Top Stylist", image: "stylist-debby.png", specialties: ["Signature cuts", "Butterfly", "Hair coloring"], accent: true },
+  { name: "Kak Agnes", role: "Senior Stylist", image: "stylist-agnes.png", specialties: ["Hair coloring", "Highlights", "Ombre"], accent: false },
+  { name: "Mba Sari", role: "Stylist", image: "stylist-sari.png", specialties: ["Potong", "Styling", "Blow"], accent: false },
+  { name: "Mba Lina", role: "Junior Stylist", image: "stylist-lina.png", specialties: ["Basic styling", "Cuci & blow", "Treatment"], accent: false },
 ];
 
 export default function TeamPage() {
@@ -36,8 +37,8 @@ export default function TeamPage() {
               key={s.name}
               className={`p-7 text-center anim-fade-up anim-delay-${(i + 1) * 100} ${s.accent ? "glass-pink rounded-lg shadow-medium" : "card-soft"}`}
             >
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full glass-soft text-5xl anim-bounce-soft" style={{ animationDelay: `${i * 0.3}s` }}>
-                {s.avatar}
+              <div className="mx-auto h-24 w-24 rounded-full overflow-hidden glass-soft anim-bounce-soft relative" style={{ animationDelay: `${i * 0.3}s` }}>
+                <Image src={`/assets/${s.image}`} alt={s.name} fill className="object-cover" />
               </div>
               <h2 className="mt-5 font-display text-2xl font-bold text-ink">{s.name}</h2>
               <p className={`mt-1 text-sm font-semibold ${s.accent ? "text-pink-600" : "text-text-muted"}`}>{s.role}</p>

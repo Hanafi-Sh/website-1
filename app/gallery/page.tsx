@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BUSINESS, waLink } from "@/lib/constants";
 import type { Metadata } from "next";
 
@@ -32,17 +33,15 @@ export default function GalleryPage() {
           <p className="mt-5 text-lg text-text-muted">
             Lihat hasil kerja kami. Setiap potong, coloring, dan styling dibuat dengan teliti dan passion.
           </p>
-          <p className="mt-3 text-xs italic text-pink-400">📷 Foto real akan ditampilkan di v1.1 (saat ini placeholder)</p>
+          <p className="mt-3 text-xs italic text-pink-400">📷 Preview hasil kerja kami. Foto real dengan model akan diperbarui di v1.1.</p>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => (
             <article key={item.id} className={`card-soft p-0 overflow-hidden anim-fade-up anim-delay-${(i + 1) * 80}`}>
-              <div className="aspect-square bg-pink-gradient flex items-center justify-center relative overflow-hidden">
-                <div className="text-6xl anim-float" style={{ animationDelay: `${i * 0.2}s` }}>
-                  {item.emoji}
-                </div>
-                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors" />
+              <div className="aspect-square bg-pink-gradient relative overflow-hidden">
+                <Image src={`/assets/gallery-${item.id}.png`} alt={item.caption} fill className="object-cover" />
+                <div className="absolute inset-0 bg-pink-900/0 group-hover:bg-pink-900/10 transition-colors" />
               </div>
               <div className="p-4">
                 <span className="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-pink-100 text-pink-700">

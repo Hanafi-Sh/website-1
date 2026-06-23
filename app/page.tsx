@@ -83,7 +83,7 @@ export default function HomePage() {
             <div className="relative anim-fade-scale anim-delay-200">
               {/* Main image */}
               <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-large">
-                <Image src="/hero.jpg" alt="Suasana hangat Daisy Beauty Salon" fill priority className="object-cover" />
+                <Image src="/assets/hero.jpg" alt="Suasana hangat Daisy Beauty Salon" fill priority className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-pink-900/20 via-transparent to-transparent" />
               </div>
 

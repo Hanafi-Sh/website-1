@@ -5,7 +5,7 @@ export default function SchemaOrg() {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
     name: BUSINESS.name,
-    image: "https://daisybeautysalonbydebby.com/hero.jpg",
+    image: "https://daisybeautysalonbydebby.com/assets/hero.jpg",
     address: {
       "@type": "PostalAddress",
       streetAddress: BUSINESS.address.street,
